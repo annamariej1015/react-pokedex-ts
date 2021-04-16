@@ -13,7 +13,9 @@ const PokedexList: React.FC<PokedexProps> =({pokemons}) => {
                 <ul className="list-group">
                     {pokemons.map((pokemon, index) =>{
                         return(
-                            <PokedexItem pokemon={pokemon} key={index}/>
+                            <div className='col-sm-12 col-md-3' key={pokemon.id}>
+                                <PokedexItem pokemon={pokemon} key={index}/>
+                            </div>
                         );
                     })}
                 </ul>
