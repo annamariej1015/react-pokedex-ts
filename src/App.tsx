@@ -11,8 +11,19 @@ const App: React.FC = () => {
 
   return (
     <div className="container">
-      {/*Pokedex */}
-      <PokedexList pokemons={ pokemons }/>
+        <h2 className='text-center'>Anna's Pokedex</h2>
+        <div className="row">
+          <div className="col">
+            <div className="input-group mb-3">
+                <input type="text" className="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
+                <div className="input-group-prepend">
+                  <button className="btn btn-warning" type="button" id="button-addon1">Search</button>
+                </div>
+            </div>
+          </div>
+        </div>
+        {/*Pokedex */}
+        <PokedexList pokemons={ pokemons }/>
       {/*PokeMon*/}
     </div>
   );
