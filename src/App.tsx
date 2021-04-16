@@ -1,31 +1,38 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import { pokemonData } from './pokemonData';
 import PokedexList from '../src/components/PokedexList';
-import PokedexItem from '../src/components/PokedexItem';
+import NavBar from '..//src/components/NavBar';
+import {BrowserRouter as Router} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
+import PokedexItem from './components/PokedexItem';
+
 
 
 
 const App: React.FC = () => {
   const [pokemons, setPokemons] = useState<Pokemon[]>(pokemonData);
 
+  //useEffect(() =>{
+    //let foundPokemons = pokemonData.filter(pokemon => pokemon.id === +pokemon);
+    //setPokemons(foundPokemons);
+  //},[]);
+
+
   return (
-    <div className="container">
-        <h2 className='text-center'>Anna's Pokedex</h2>
-        <div className="row">
-          <div className="col">
-            <div className="input-group mb-3">
-                <input type="text" className="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
-                <div className="input-group-prepend">
-                  <button className="btn btn-warning" type="button" id="button-addon1">Search</button>
-                </div>
-            </div>
+    //<Router>
+        <div>
+          <NavBar />
+          <div className="container">
+            <PokedexList pokemons={pokemons} />
+              {/*Pokedex 
+              <Route path='/' exact component={PokedexList} pokemons={pokemons}/>
+              <Route path='/pokemon/:pokemonId' component={PokedexItem} />
+              {/*PokeMon*/}
+              
           </div>
         </div>
-        {/*Pokedex */}
-        <PokedexList pokemons={ pokemons } />
-      {/*PokeMon*/}
-    </div>
+      //</Router>
   );
 }
 
