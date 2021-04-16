@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
 import './App.css';
-import { Pokemon } from './pokemonData';
+import { pokemonData } from './pokemonData';
 import PokedexList from '../src/components/PokedexList';
 import PokedexItem from '../src/components/PokedexItem';
 
 
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      
+    <div className="container">
+      {/*Pokedex */}
+      {/*PokeMon*/}
     </div>
   );
 }
