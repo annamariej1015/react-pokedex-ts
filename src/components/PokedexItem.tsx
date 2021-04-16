@@ -1,8 +1,19 @@
 import React from 'react';
 
-const PokedexItem =() => {
+interface PokedexItemProps{
+    pokemon: Pokemon;
+}
+
+const PokedexItem: React.FC<PokedexItemProps> = ({pokemon}) => {
     return(
-        <div>Single Pokemon Live here</div>
+        <div className="card border-warning mb-3">
+            <div className="card-header">{pokemon.name}</div>
+            <div className="card-body text-warning">
+                <h5 className="card-title">{pokemon.type}</h5>
+                <p className="card-text">{pokemon.weaknesses}</p>
+            </div>
+        </div>
+        
     )
 };
 

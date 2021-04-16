@@ -23,7 +23,7 @@ const App: React.FC = () => {
           </div>
         </div>
         {/*Pokedex */}
-        <PokedexList pokemons={ pokemons }/>
+        <PokedexList pokemons={ pokemons } />
       {/*PokeMon*/}
     </div>
   );
